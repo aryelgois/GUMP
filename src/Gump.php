@@ -162,14 +162,14 @@ class Gump
      *
      * @return bool
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public static function add_validator($rule, $callback, $error_message = null)
     {
         $method = 'validate_'.$rule;
 
         if (method_exists(__CLASS__, $method) || isset(self::$validation_methods[$rule])) {
-            throw new Exception("Validator rule '$rule' already exists.");
+            throw new \Exception("Validator rule '$rule' already exists.");
         }
 
         self::$validation_methods[$rule] = $callback;
@@ -188,14 +188,14 @@ class Gump
      *
      * @return bool
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public static function add_filter($rule, $callback)
     {
         $method = 'filter_'.$rule;
 
         if (method_exists(__CLASS__, $method) || isset(self::$filter_methods[$rule])) {
-            throw new Exception("Filter rule '$rule' already exists.");
+            throw new \Exception("Filter rule '$rule' already exists.");
         }
 
         self::$filter_methods[$rule] = $callback;
@@ -264,7 +264,7 @@ class Gump
      *
      * @return array
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function run(array $data, $check_fields = false)
     {
@@ -378,7 +378,7 @@ class Gump
      *
      * @return mixed
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function validate(array $input, array $ruleset)
     {
@@ -457,7 +457,7 @@ class Gump
                             }
 
                         } else {
-                            throw new Exception("Validator method '$method' does not exist.");
+                            throw new \Exception("Validator method '$method' does not exist.");
                         }
                     }
                 }
@@ -659,11 +659,11 @@ class Gump
      * @param mixed $input
      * @param array $filterset
      *
-     * @throws Exception
+     * @throws \Exception
      *
      * @return mixed
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function filter(array $input, array $filterset)
     {
@@ -700,7 +700,7 @@ class Gump
                     } elseif (isset(self::$filter_methods[$filter])) {
                         $value = call_user_func(self::$filter_methods[$filter], $value, $params);
                     } else {
-                        throw new Exception("Filter method '$filter' does not exist.");
+                        throw new \Exception("Filter method '$filter' does not exist.");
                     }
                 }
             }
@@ -1807,8 +1807,8 @@ class Gump
             return;
         }
 
-        $cdate1 = new DateTime(date('Y-m-d', strtotime($input[$field])));
-        $today = new DateTime(date('d-m-Y'));
+        $cdate1 = new \DateTime(date('Y-m-d', strtotime($input[$field])));
+        $today = new \DateTime(date('d-m-Y'));
 
         $interval = $cdate1->diff($today);
         $age = $interval->y;
