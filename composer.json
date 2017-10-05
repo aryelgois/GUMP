@@ -1,5 +1,5 @@
 {
-    "name": "wixel/gump",
+    "name": "aryelgois/gump",
     "description": "A fast, extensible & stand-alone PHP input validation class that allows you to validate any data",
     "authors": [
         {
@@ -14,6 +14,8 @@
     "license": "MIT",
     "homepage": "https://wixelhq.com/",
     "autoload": {
-        "files": ["gump.class.php"]
+        "psr-4": {
+            "aryelgois\\Gump\\": "src/"
+        }
     }
 }

@@ -1,4 +1,7 @@
 <?php
+
+namespace aryelgois\Gump;
+
 /**
  * GUMP - A fast, extensible PHP input validation class.
  *
@@ -8,7 +11,7 @@
  *
  * @version     1.5
  */
-class GUMP
+class Gump
 {
     // Singleton instance of GUMP
     protected static $instance = null;
