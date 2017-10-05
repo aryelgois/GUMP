@@ -15,7 +15,7 @@
         }
     ],
     "license": "MIT",
-    "homepage": "https://wixelhq.com/",
+    "homepage": "https://github.com/aryelgois/GUMP",
     "require": {
         "aryelgois/utils": "dev-master"
     },
