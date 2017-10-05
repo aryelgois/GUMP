@@ -1,6 +1,6 @@
 {
     "name": "aryelgois/gump",
-    "description": "A fast, extensible & stand-alone PHP input validation class that allows you to validate any data",
+    "description": "A fast & extensible PHP input validation class that allows you to validate any data",
     "authors": [
         {
             "name": "Sean Nieuwoudt",
@@ -13,6 +13,9 @@
     ],
     "license": "MIT",
     "homepage": "https://wixelhq.com/",
+    "require": {
+        "aryelgois/utils": "dev-master"
+    },
     "autoload": {
         "psr-4": {
             "aryelgois\\Gump\\": "src/"

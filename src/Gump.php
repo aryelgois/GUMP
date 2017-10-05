@@ -2,6 +2,8 @@
 
 namespace aryelgois\Gump;
 
+use aryelgois\Utils\Validation;
+
 /**
  * GUMP - A fast, extensible PHP input validation class.
  *
