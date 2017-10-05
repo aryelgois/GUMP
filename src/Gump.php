@@ -1936,33 +1936,33 @@ class Gump
         }
     }
 
-      /**
-       * Checks if a file was uploaded.
-       *
-       * Usage: '<index>' => 'required_file'
-       *
-       * @param  string $field
-       * @param  array $input
-       *
-       * @return mixed
-       */
-      protected function validate_required_file($field, $input, $param = null)
-      {
-          if (!isset($input[$field])) {
-              return;
-          }
+    /**
+     * Checks if a file was uploaded.
+     *
+     * Usage: '<index>' => 'required_file'
+     *
+     * @param  string $field
+     * @param  array $input
+     *
+     * @return mixed
+     */
+    protected function validate_required_file($field, $input, $param = null)
+    {
+        if (!isset($input[$field])) {
+            return;
+        }
 
-          if (is_array($input[$field]) && $input[$field]['error'] !== 4) {
-              return;
-          }
+        if (is_array($input[$field]) && $input[$field]['error'] !== 4) {
+            return;
+        }
 
-          return array(
-              'field' => $field,
-              'value' => $input[$field],
-              'rule' => __FUNCTION__,
-              'param' => $param,
-          );
-      }
+        return array(
+            'field' => $field,
+            'value' => $input[$field],
+            'rule' => __FUNCTION__,
+            'param' => $param,
+        );
+    }
 
     /**
      * Check the uploaded file for extension for now
