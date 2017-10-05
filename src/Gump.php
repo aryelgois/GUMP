@@ -78,7 +78,8 @@ class Gump
     public function __construct($lang = 'en')
     {
         if ($lang) {
-            $lang_file = __DIR__.DIRECTORY_SEPARATOR.'lang'.DIRECTORY_SEPARATOR.$lang.'.php';
+            $sep = DIRECTORY_SEPARATOR;
+            $lang_file = __DIR__ . $sep . '..' . $sep . 'lang' . $sep . $lang . '.php';
 
             if (file_exists($lang_file)) {
                 $this->lang = $lang;
