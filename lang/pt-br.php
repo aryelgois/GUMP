@@ -43,4 +43,5 @@ return array(
     'validate_valid_array_size_greater' => 'O campo {field} precisa conter um array com tamanho, igual, ou maior que {param}',
     'validate_valid_array_size_lesser'  => 'O campo {field} precisa conter um array com tamanho, igual, ou menor que {param}',
     'validate_valid_array_size_equal'   => 'O campo {field} precisa conter um array com tamanho igual a {param}',
+    'validate_brazilian_document'       => 'O campo {field} precisa conter um documento válido',
 );

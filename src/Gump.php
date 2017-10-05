@@ -908,6 +908,33 @@ class Gump
         return $value;
     }
 
+    /**
+     * Remove anything but numbers, if is a valid brazilian document.
+     *
+     * Usage: '<index>' => 'brazilian_document'
+     *     OR '<index>' => 'brazilian_document,DOC' where DOC is in [cpf, cnpj]
+     *
+     * @author Aryel Mota Góis
+     *
+     * @param string $value
+     * @param array  $params To filter a specific document, see Usage
+     *
+     * @return string
+     */
+    public function filter_brazilian_document($value, $params = null)
+    {
+        if (is_array($params) && count(array_intersect(['cpf', 'cnpj'], $params)) == 1) {
+            $result = Validation::{$params[0]}($value);
+        } else {
+            $result = Validation::cpf($value);
+            if (!$result) {
+                $result = Validation::cnpj($value);
+            }
+        }
+
+        return $result ? $result : $value;
+    }
+
     // ** ------------------------- Validators ------------------------------------ ** //
 
 
@@ -2214,5 +2241,44 @@ class Gump
                 'param' => $param,
             );
         }
+    }
+
+    /**
+     * Determine if the provided field value is a valid Brazilian document (CPF or CNPJ).
+     *
+     * Usage: '<index>' => 'brazilian_document'
+     *     OR '<index>' => 'brazilian_document,DOC' where DOC is in [cpf, cnpj]
+     *
+     * @author Aryel Mota Góis
+     *
+     * @param string $field
+     * @param array  $input
+     * @param string $param To validate a specific document, see Usage
+     *
+     * @return mixed
+     */
+     public function validate_brazilian_document($field, $input, $param = null)
+     {
+        if (!isset($input[$field])) {
+            return;
+        }
+
+        $data = $input[$field];
+        if (in_array($param, ['cpf', 'cnpj'])) {
+            if (Validation::{$param}($data)) {
+                return;
+            }
+        } else {
+            if (Validation::cpf($data) || Validation::cnpj($data)) {
+                return;
+            }
+        }
+
+        return [
+            'field' => $field,
+            'value' => $input[$field],
+            'rule' => __FUNCTION__,
+            'param' => $param,
+        ];
     }
 }
