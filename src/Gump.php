@@ -535,7 +535,8 @@ class Gump
      */
     protected function get_messages()
     {
-        $lang_file = __DIR__.DIRECTORY_SEPARATOR.'lang'.DIRECTORY_SEPARATOR.$this->lang.'.php';
+        $sep = DIRECTORY_SEPARATOR;
+        $lang_file = __DIR__ . $sep . '..' . $sep . 'lang' . $sep . $this->lang . '.php';
         $messages = require $lang_file;
 
         if ($validation_methods_errors = self::$validation_methods_errors) {
