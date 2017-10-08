@@ -935,6 +935,42 @@ class Gump
         return $result ? $result : $value;
     }
 
+    /**
+     * Filter a date into a specific format
+     *
+     * Usage: '<index>' => 'date,[to_format],[from_format]'
+     *
+     * @author Aryel Mota Góis
+     * @see http://www.php.net/manual/en/function.date.php For date formatting
+     *
+     * @param string $value
+     * @param array  $params Date formats
+     *
+     * @return string
+     */
+    public function filter_date($value, $params = null)
+    {
+        $to = 'Y-m-d';
+        $from = null;
+        if (is_array($params)) {
+            $to = $params[0] ?? $to;
+            $from = $params[1] ?? $from;
+        }
+
+        if ($from == null) {
+            if ($timestamp = strtotime($value)) {
+                return date($to, $timestamp);
+            }
+        } else {
+            $date = \DateTime::createFromFormat($from, $value);
+            if ($date !== false) {
+                return date($to, $date->getTimestamp());
+            }
+        }
+
+        return $value;
+    }
+
     // ** ------------------------- Validators ------------------------------------ ** //
 
 
