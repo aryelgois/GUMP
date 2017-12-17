@@ -17,7 +17,7 @@
     "license": "MIT",
     "homepage": "https://github.com/aryelgois/GUMP",
     "require": {
-        "aryelgois/utils": "dev-master"
+        "aryelgois/utils": "^0.2"
     },
     "autoload": {
         "psr-4": {

@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b4eab5ef866de8a7ede234f91efcbdf4",
+    "content-hash": "6f0f9578a531af488457b8a2586809f1",
     "packages": [
         {
             "name": "aryelgois/utils",
-            "version": "dev-master",
+            "version": "v0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aryelgois/utils.git",
-                "reference": "47a1656140c274daca2fdb4646b83c0e29899bc6"
+                "reference": "dcd2d5bd5866e4feaa1ad1e1a83c9b4f4217c3b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aryelgois/utils/zipball/47a1656140c274daca2fdb4646b83c0e29899bc6",
-                "reference": "47a1656140c274daca2fdb4646b83c0e29899bc6",
+                "url": "https://api.github.com/repos/aryelgois/utils/zipball/dcd2d5bd5866e4feaa1ad1e1a83c9b4f4217c3b0",
+                "reference": "dcd2d5bd5866e4feaa1ad1e1a83c9b4f4217c3b0",
                 "shasum": ""
             },
             "require": {
@@ -43,15 +43,13 @@
             "keywords": [
                 "utils"
             ],
-            "time": "2017-10-01T18:24:50+00:00"
+            "time": "2017-11-19T12:27:56+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "aryelgois/utils": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
