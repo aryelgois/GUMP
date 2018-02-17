@@ -43,5 +43,10 @@ return array(
     'validate_valid_array_size_greater' => 'O campo {field} precisa conter um array com tamanho, igual, ou maior que {param}',
     'validate_valid_array_size_lesser'  => 'O campo {field} precisa conter um array com tamanho, igual, ou menor que {param}',
     'validate_valid_array_size_equal'   => 'O campo {field} precisa conter um array com tamanho igual a {param}',
+    'validate_valid_persian_name'       => 'O campo {field} precisa conter um nome Persa/Dari ou Arábico válido',
+    'validate_valid_eng_per_pas_name'   => 'O campo {field} precisa conter um nome Inglês, Persa/Dari/Pashtu ou Arabic válido',
+    'validate_valid_persian_digit'      => 'O campo {field} precisa conter um dígito num formato Persa/Dari ou Arabic válido',
+    'validate_valid_persian_text'       => 'O campo {field} precisa conter um texto num formato Persa/Dari ou Arabic válido',
+    'validate_valid_pashtu_text'        => 'O campo {field} precisa conter um texto num formato Pashtu válido',
     'validate_brazilian_document'       => 'O campo {field} precisa conter um documento válido',
 );
