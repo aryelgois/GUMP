@@ -2369,7 +2369,7 @@ class Gump
         }
     }
 
-	/**
+    /**
      * Determine if the input is a valid person name in English, Persian/Dari/Pashtu or Arabic mainly in Afghanistan and Iran.
      *
      * Usage: '<index>' => 'valid_eng_per_pas_name'
@@ -2395,7 +2395,7 @@ class Gump
         }
     }
 
-	/**
+    /**
      * Determine if the input is valid digits in Persian/Dari, Pashtu or Arabic format.
      *
      * Usage: '<index>' => 'valid_persian_digit'
@@ -2422,7 +2422,7 @@ class Gump
     }
 
 
-	/**
+    /**
      * Determine if the input is a valid text in Persian/Dari or Arabic mainly in Afghanistan and Iran.
      *
      * Usage: '<index>' => 'valid_persian_text'
@@ -2448,7 +2448,7 @@ class Gump
         }
     }
 
-	/**
+    /**
      * Determine if the input is a valid text in Pashtu mainly in Afghanistan.
      *
      * Usage: '<index>' => 'valid_pashtu_text'
