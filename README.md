@@ -17,14 +17,14 @@ Include it in your project:
 require "gump.class.php";
 
 $is_valid = GUMP::is_valid($_POST, array(
-	'username' => 'required|alpha_numeric',
-	'password' => 'required|max_len,100|min_len,6'
+    'username' => 'required|alpha_numeric',
+    'password' => 'required|max_len,100|min_len,6'
 ));
 
 if($is_valid === true) {
-	// continue
+    // continue
 } else {
-	print_r($is_valid);
+    print_r($is_valid);
 }
 ```
 
@@ -96,27 +96,27 @@ $gump = new GUMP();
 $_POST = $gump->sanitize($_POST); // You don't have to sanitize, but it's safest to do so.
 
 $gump->validation_rules(array(
-	'username'    => 'required|alpha_numeric|max_len,100|min_len,6',
-	'password'    => 'required|max_len,100|min_len,6',
-	'email'       => 'required|valid_email',
-	'gender'      => 'required|exact_len,1|contains,m f',
-	'credit_card' => 'required|valid_cc'
+    'username'    => 'required|alpha_numeric|max_len,100|min_len,6',
+    'password'    => 'required|max_len,100|min_len,6',
+    'email'       => 'required|valid_email',
+    'gender'      => 'required|exact_len,1|contains,m f',
+    'credit_card' => 'required|valid_cc'
 ));
 
 $gump->filter_rules(array(
-	'username' => 'trim|sanitize_string',
-	'password' => 'trim',
-	'email'    => 'trim|sanitize_email',
-	'gender'   => 'trim',
-	'bio'	   => 'noise_words'
+    'username' => 'trim|sanitize_string',
+    'password' => 'trim',
+    'email'    => 'trim|sanitize_email',
+    'gender'   => 'trim',
+    'bio'      => 'noise_words'
 ));
 
 $validated_data = $gump->run($_POST);
 
 if($validated_data === false) {
-	echo $gump->get_readable_errors(true);
+    echo $gump->get_readable_errors(true);
 } else {
-	print_r($validated_data); // validation successful
+    print_r($validated_data); // validation successful
 }
 ```
 
@@ -126,17 +126,17 @@ The short format is an alternative way to run the validation.
 
 ```php
 $data = array(
-	'street' => '6 Avondans Road'
+    'street' => '6 Avondans Road'
 );
 
 $validated = GUMP::is_valid($data, array(
-	'street' => 'required|street_address'
+    'street' => 'required|street_address'
 ));
 
 if($validated === true) {
-	echo "Valid Street Address!";
+    echo "Valid Street Address!";
 } else {
-	print_r($validated);
+    print_r($validated);
 }
 ```
 
@@ -270,15 +270,15 @@ require("gump.class.php");
 
 class MyClass extends GUMP
 {
-	public function filter_myfilter($value, $param = NULL)
-	{
-		...
-	}
+    public function filter_myfilter($value, $param = NULL)
+    {
+        ...
+    }
 
-	public function validate_myvalidator($field, $input, $param = NULL)
-	{
-		...
-	}
+    public function validate_myvalidator($field, $input, $param = NULL)
+    {
+        ...
+    }
 
 } // EOC
 
@@ -301,11 +301,11 @@ You can easily override your form field names for improved readability in errors
 
 ```php
 $data = array(
-	'str' => null
+    'str' => null
 );
 
 $rules = array(
-	'str' => 'required'
+    'str' => 'required'
 );
 
 GUMP::set_field_name("str", "Street");
@@ -313,9 +313,9 @@ GUMP::set_field_name("str", "Street");
 $validated = GUMP::is_valid($data, $rules);
 
 if($validated === true) {
-	echo "Valid Street Address\n";
+    echo "Valid Street Address\n";
 } else {
-	print_r($validated);
+    print_r($validated);
 }
 ```
 
@@ -325,14 +325,14 @@ if($validated === true) {
 require "gump.class.php";
 
 $is_valid = GUMP::is_valid(array_merge($_POST,$_FILES), array(
-	'title' => 'required|alpha_numeric',
-	'image' => 'required_file|extension,png;jpg'
+    'title' => 'required|alpha_numeric',
+    'image' => 'required_file|extension,png;jpg'
 ));
 
 if($is_valid === true) {
-	// continue
+    // continue
 } else {
-	print_r($is_valid);
+    print_r($is_valid);
 }
 ```
 
