@@ -6,7 +6,7 @@ namespace aryelgois\Gump;
  * Form validator, wrapping Gump
  *
  * Usage: You MUST extend this class, defining the constant properties for a
- *        specif form in your application, and SHOULD define __construct(),
+ *        specific form in your application, and SHOULD define __construct(),
  *        which MAY call it's parent with the correct data e.g. $_GET or $_POST.
  *
  * @author Aryel Mota Góis
